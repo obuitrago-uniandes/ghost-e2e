@@ -13,6 +13,7 @@
     "pctSpKeys": 16,
     "pctPgNav": 16
   },
+  "chromeWebSecurity": false,
   "integrationFolder": "./cypress/e2e",
   "pluginsFile": "./cypress/plugins/index.js",
   "pageLoadTimeout": 20000,
