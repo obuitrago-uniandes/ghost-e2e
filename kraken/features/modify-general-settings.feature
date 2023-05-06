@@ -3,6 +3,7 @@ Feature: Modificar Información General
 @user1 @web
 Scenario: Validar XSS en el título
   Given I navigate to page "http://localhost:2368/ghost"
+  And I have previously registered with "<USER>" and "<PASSWORD>"
   When I enter email "<USER>"
   And I enter password "<PASSWORD>"
   And I Sign In
