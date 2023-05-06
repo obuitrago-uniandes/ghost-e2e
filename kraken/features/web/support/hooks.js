@@ -5,6 +5,7 @@ const AdminPage = require("../page_object/admin.page");
 const GeneralAdminPage = require("../page_object/general.admin.page");
 const PrincipalPage = require("../page_object/principal.page");
 const DesignAdminPage = require("../page_object/design.admin.page");
+const RegistrationPage = require("../page_object/registration.page");
 
 Before(async function () {
   this.deviceClient = new WebClient("chrome", {}, this.userId);
@@ -12,6 +13,7 @@ Before(async function () {
   this.pages = this.pages ? this.pages : {};
   this.pages[`${this.userId}`] = {
     login: new LoginPage(this.driver),
+    registration: new RegistrationPage(this.driver),
     admin: new AdminPage(this.driver),
     generalAdmin: new GeneralAdminPage(this.driver),
     principal: new PrincipalPage(this.driver),
@@ -19,6 +21,7 @@ Before(async function () {
   };
 
   this.loginPage = this.pages[`${this.userId}`].login;
+  this.registrationPage = this.pages[`${this.userId}`].registration;
   this.adminPage = this.pages[`${this.userId}`].admin;
   this.generalAdminPage = this.pages[`${this.userId}`].generalAdmin;
   this.principalPage = this.pages[`${this.userId}`].principal;
@@ -28,7 +31,9 @@ Before(async function () {
 After(async function () {
   await this.deviceClient.stopKrakenForUserId(this.userId);
   this.loginPage = null;
+  this.registrationPage = null;
   this.adminPage = null;
   this.generalAdminPage = null;
+  this.principalPage = null;
   this.designAdmin = null;
 });

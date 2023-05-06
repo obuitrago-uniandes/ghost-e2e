@@ -3,6 +3,7 @@ Feature: Modificar Información Diseño
 @user1 @web
 Scenario: Agregar una nueva opción al menú de navegación 
   Given I navigate to page "http://localhost:2368/ghost"
+  And I have previously registered with "<USER>" and "<PASSWORD>"
   When I enter email "<USER>"
   And I enter password "<PASSWORD>"
   And I Sign In
