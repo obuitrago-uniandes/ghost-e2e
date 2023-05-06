@@ -6,6 +6,7 @@ const GeneralAdminPage = require("../page_object/general.admin.page");
 const PrincipalPage = require("../page_object/principal.page");
 const DesignAdminPage = require("../page_object/design.admin.page");
 const RegistrationPage = require("../page_object/registration.page");
+const PageSection = require("../page_object/page.section")
 
 Before(async function () {
   this.deviceClient = new WebClient("chrome", {}, this.userId);
@@ -18,6 +19,7 @@ Before(async function () {
     generalAdmin: new GeneralAdminPage(this.driver),
     principal: new PrincipalPage(this.driver),
     designAdmin: new DesignAdminPage(this.driver),
+    page: new PageSection(this.driver),
   };
 
   this.loginPage = this.pages[`${this.userId}`].login;
@@ -26,6 +28,7 @@ Before(async function () {
   this.generalAdminPage = this.pages[`${this.userId}`].generalAdmin;
   this.principalPage = this.pages[`${this.userId}`].principal;
   this.designAdminPage = this.pages[`${this.userId}`].designAdmin;
+  this.pageSection = this.pages[`${this.userId}`].page;
 });
 
 After(async function () {
@@ -36,4 +39,5 @@ After(async function () {
   this.generalAdminPage = null;
   this.principalPage = null;
   this.designAdmin = null;
+  this.pageSection = null;
 });

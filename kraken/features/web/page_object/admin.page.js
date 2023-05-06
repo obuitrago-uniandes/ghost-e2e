@@ -10,6 +10,9 @@ class AdminPage extends Page {
   get designMenuBtn() {
     return this.driver.$('.gh-nav-body').$('a=Design');
   }
+  get pageButton(){
+    return this.driver.$('.gh-nav-body').$('a=Pages');
+  }
 }
 
 module.exports = AdminPage;
