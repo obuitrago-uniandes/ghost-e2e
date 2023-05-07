@@ -51,6 +51,7 @@ context("Navigation", () => {
       pageManage.publishButton();
       //And click in publish now
       pageManage.publishNowButton();
+      cy.wait(1000);
   })
 
   it('Scenario: Como usuario Valido en listado de páginas la pagina editada', () => { 
