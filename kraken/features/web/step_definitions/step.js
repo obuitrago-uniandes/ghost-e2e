@@ -1,6 +1,23 @@
-const { Given, When, Then, BeforeAll } = require("@cucumber/cucumber");
+const { Given, When, Then } = require("@cucumber/cucumber");
 const expect = require("chai").expect;
 
+Given(
+  "I have previously registered with {kraken-string} and {kraken-string}",
+  async function (email, password) {
+    if (await this.registrationPage.step1Btn.isExisting()) {
+      await this.registrationPage.step1Btn.click();
+      await this.registrationPage.siteTitleInput.setValue(
+        "The Software Design Company"
+      );
+      await this.registrationPage.fullNameInput.setValue("Equipo 20");
+      await this.registrationPage.emailInput.setValue(email);
+      await this.registrationPage.passwordInput.setValue(password);
+      await this.registrationPage.step2Btn.click();
+      await this.registrationPage.step3Btn.click();
+      await this.driver.url("http://localhost:2368/ghost/#/signout");
+    }
+  }
+);
 When("I enter email {kraken-string}", async function (email) {
   return await this.loginPage.email.setValue(email);
 });

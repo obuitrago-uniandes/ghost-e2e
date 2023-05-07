@@ -16,6 +16,9 @@ class AdminPage extends Page {
   get postMenuBtn() {
     return this.driver.$('[href="#/posts/"]');
   }
+  get pageButton(){
+    return this.driver.$('.gh-nav-body').$('a=Pages');
+  }
 }
 
 module.exports = AdminPage;
