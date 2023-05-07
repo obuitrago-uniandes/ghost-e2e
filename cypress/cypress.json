@@ -1,18 +1,6 @@
 {
   "projectId": "ghost-e2e-cypress",
   "baseUrl": "http://localhost:2368/",
-  "env": {
-    "appName": "App prueba",
-    "events": 100,
-    "delay": 300,
-    "seed": 100,
-    "pctClicks": 27,
-    "pctScroll": 1,
-    "pctSelectors": 16,
-    "pctKeys": 24,
-    "pctSpKeys": 16,
-    "pctPgNav": 16
-  },
   "chromeWebSecurity": false,
   "integrationFolder": "./cypress/e2e",
   "pluginsFile": "./cypress/plugins/index.js",
