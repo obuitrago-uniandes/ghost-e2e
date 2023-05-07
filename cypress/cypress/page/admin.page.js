@@ -7,6 +7,14 @@ class AdminPage {
     cy.get('.gh-nav-manage>li>a').eq(2).click({ force: true })
     return this;
   }
+  clickTagBtn() {
+    cy.get('.gh-nav-manage>li>a').eq(3).click({ force: true })
+    return this;
+  }
+  clickPostBtn() {
+    cy.get('a[data-test-nav="posts"]').click({ force: true })
+    return this;
+  }
 }
 
 module.exports = new AdminPage();

@@ -1,4 +1,4 @@
-Feature: Crear Tags	
+Feature: Post
 
 @user1 @web
 Scenario: Crear post vacio
