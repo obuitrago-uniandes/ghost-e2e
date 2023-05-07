@@ -27,7 +27,7 @@
 | Administración de Post | Editar post | |
 | Configuración General | Validar XSS en el título | |
 | Configuración General | Validar el cambio de título | |
-| Configuración General | Validar un título con comillas dobles | |
+| Configuración General (falla) | Validar un título con comillas dobles | |
 | Configuración General | Modificar la descripción del sitio | |
 | Administración de Páginas | (Cypress) Como usuario creo una página con titulo y contenido borrador  | (Kraken) Como usuario creo una página con titulo y contenido|
 | Administración de Páginas | (Cypress) Como usuario edito y publico el borrador de la página | (Kraken) Como usuario reviso que se visualice la pagina editada en el listado|
