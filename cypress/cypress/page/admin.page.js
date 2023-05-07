@@ -3,8 +3,12 @@ class AdminPage {
     cy.contains("a", "General").click({ force: true });
     return this;
   }
+  clickDesignBtn() {
+    cy.contains("a", "Design").click({ force: true });
+    return this;
+  }
   clickPageBtn() {
-    cy.get('.gh-nav-manage>li>a').eq(2).click({ force: true })
+    cy.get(".gh-nav-manage>li>a").eq(2).click({ force: true });
     return this;
   }
   clickTagBtn() {

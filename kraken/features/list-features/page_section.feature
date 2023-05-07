@@ -14,7 +14,7 @@ Scenario: Como usuario creo una página con titulo y contenido
   And I wait for 1 seconds
   And I go to Create Page
   And I click on title
-  And I enter title
+  And I enter title page
   And I wait for 1 seconds
   And I click on content
   And I click on plus button 

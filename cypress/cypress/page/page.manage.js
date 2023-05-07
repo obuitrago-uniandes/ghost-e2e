@@ -43,7 +43,7 @@ class PageManage {
         return cy.get(".modal-footer").contains('Delete').click({ force: true });
     }
     searchItemPage(value,number){
-        return cy.get('.gh-list-row')
+        return cy.get('.gh-list')
             .contains(value)
             .should(($p) => {
                 expect($p).to.have.length(number);
