@@ -5,6 +5,8 @@ const AdminPage = require("../page_object/admin.page");
 const GeneralAdminPage = require("../page_object/general.admin.page");
 const PrincipalPage = require("../page_object/principal.page");
 const DesignAdminPage = require("../page_object/design.admin.page");
+const TagAdminPage = require("../page_object/tag.admin.page");
+const PostAdminPage = require('../page_object/post.admin.page');
 const RegistrationPage = require("../page_object/registration.page");
 const PageSection = require("../page_object/page.section")
 
@@ -19,6 +21,8 @@ Before(async function () {
     generalAdmin: new GeneralAdminPage(this.driver),
     principal: new PrincipalPage(this.driver),
     designAdmin: new DesignAdminPage(this.driver),
+    tagAdmin: new TagAdminPage(this.driver),
+    postAdmin: new PostAdminPage(this.driver),
     page: new PageSection(this.driver),
   };
 
@@ -28,6 +32,8 @@ Before(async function () {
   this.generalAdminPage = this.pages[`${this.userId}`].generalAdmin;
   this.principalPage = this.pages[`${this.userId}`].principal;
   this.designAdminPage = this.pages[`${this.userId}`].designAdmin;
+  this.tagAdminPage = this.pages[`${this.userId}`].tagAdmin;
+  this.postAdminPage = this.pages[`${this.userId}`].postAdmin;
   this.pageSection = this.pages[`${this.userId}`].page;
 });
 
