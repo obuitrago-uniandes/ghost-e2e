@@ -56,16 +56,10 @@ context("Navigation", () => {
     postManage.fillTitle('PostC');
     //And I enter description
     postManage.fillDescription('PostC');
-    //And I click preview 
-    postManage.btnPreview()
     //And I click publish 
     postManage.btnPublish()
-    //And I click continue 
-    postManage.btnContinue()
     //And I click confirm publish 
-    postManage.btnConfirmPublish()    
-    // An Back to editor
-    postManage.btnBackEditor()    
+    postManage.btnConfirmPublish()  
     //And I back to list Post
     postManage.backPost()
     //I expect have to post with the same name "Post1"

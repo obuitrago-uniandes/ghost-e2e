@@ -29,6 +29,7 @@ Scenario: No permitir guardar borrador de post con titulo con espacios
 	And I click New Post
 	And I enter titulo Post "     "
 	And I back to list Post
+	Then I expect have to post with the same name "(Untitled)"
 	Then I send a signal to user 3 containing "Scenario Validate 2"
 	And I wait for 4 seconds
 
@@ -44,10 +45,10 @@ Scenario: Crear post y publicar
 	And I click New Post
 	When I enter titulo Post "Post1"
 	And I enter description Post "Post"
-	Then I click preview
 	Then I click publish
-	Then I click continue
 	Then I click confirm publish
+	And I back to list Post
+	And I back to publishPost
 	Then I expect have to post with the same name "Post1"
 	Then I send a signal to user 4 containing "Scenario Validate 3"
 	And I wait for 2 seconds

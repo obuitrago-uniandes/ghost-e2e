@@ -9,7 +9,7 @@ class TagAdminPage extends Page {
   }
 
   get saveBtn() {
-    return this.driver.$('[data-test-button="save"]');
+    return this.driver.$(".gh-canvas").$("span=Save");
   }
 
   get slugInput() {
@@ -24,7 +24,7 @@ class TagAdminPage extends Page {
     return this.driver.$('#tag-name');
   }
   get validateError() {
-    return this.driver.$('[data-test-input="tag-name"]').parentElement().$("p=You must specify a name for the tag.");
+    return this.driver.$('#tag-name').parentElement().$("p=You must specify a name for the tag.");
   }
 
  

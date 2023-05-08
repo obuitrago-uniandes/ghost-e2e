@@ -209,16 +209,8 @@ When('I enter description Post {string}', async function (description) {
   return await this.postAdminPage.descriptionInput.setValue(description);    
 });
 
-Then('I click preview', async function() {
-  return await this.postAdminPage.previewBtn.click();    
-});
-
 Then('I click publish', async function() {
   return await this.postAdminPage.publishBtn.click();    
-});
-
-Then('I click continue', async function() {
-  return await this.postAdminPage.continueBtn.click();
 });
 
 Then('I click confirm publish', async function() {
@@ -235,6 +227,11 @@ Then('I expect have to post with the same name {string}', async function(value) 
 Then('I edit Post', async function() {
   return await this.postAdminPage.editBtn.click();
 }); 
+Then('I back to publishPost', async function() {
+  return await this.postAdminPage.verPublicados.click();
+}); 
+
+
 
 /* CREACIÓN EDICIÓN PAGINAS */
 
