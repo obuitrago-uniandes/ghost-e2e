@@ -1,38 +1,38 @@
 class PostManage {
     
     createNewButton() {
-        return cy.get(".gh-canvas").contains("New post").click({ force: true });
+        return cy.get(".gh-canvas").contains("New post").click();
     }
 
+
     backPost() {
-        return cy.get(`a[href="#/posts/"]`).click({ force: true });
-    }
+        cy.go('back');
+    }    
     
     validateInList(value){
         return cy.get('h3').parent(cy.get(".content-list")).contains(value)
 
-        
-    }
-    fillTitle(value){
-        const field =  cy.get(`textarea[placeholder="Post title"]`);
-        field.type(value);    
-        return this;
     }
 
-    fillDescription(value){
-        const field =  cy.get(`div[data-placeholder="Begin writing your post..."]`);
-        field.clear();
-        field.type(value);
-    
+    fillTitle(value){
+        const field =  cy.get(`textarea[placeholder="Post Title"]`);
+        field.clear({ force: true }).type(value, { force: true });
         return this;
+    }
+    seeSettings(){
+        return cy.get(".post-settings").click({ force: true });
     }
 
     btnPublish(){
-        //return cy.get(`button[data-test-button="publish-flow"]`).click({ force: true });
+        return cy.get(".view-actions").contains("Publish").click({ force: true });
+    }
+
+    backDarfPost(){
+        return cy.get(".gh-nav-body").contains("Drafts").click();
     }
 
     btnConfirmPublish(){
-        //return cy.get(`button[data-test-button="confirm-publish"]`).click({ force: true });
+        return cy.get(".gh-publishmenu-footer").contains("Publish").click({ force: true });
     }
 
     editPost(value){

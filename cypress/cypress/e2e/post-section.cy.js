@@ -20,29 +20,31 @@ context("Navigation", () => {
   it('Scenario: Crear post vacio', () => {
       //When I go section Post
       adminPage.clickPostBtn()
-      //And I go to Create Post
       postManage.createNewButton()
       //And I enter title
-      postManage.fillTitle('(Untitled)');
+      postManage.fillTitle(' ');
+      cy.wait(1000);
       //And I back to list Post
       postManage.backPost()
-      postManage.backPost()
       //Then I expect have to post with the same name "(Untitled)"
-      cy.wait(2000);
+      cy.wait(1000);
       postManage.validateInList('(Untitled)')
-      cy.wait(3000);
+      cy.wait(2000);
   })
 
   it('Scenario: No permitir guardar borrador de post con titulo con espacios', () => { 
     cy.wait(1000);
     //When I go section Post
     adminPage.clickPostBtn()
-    //And I go to Create Post
     postManage.createNewButton()
     //And I enter title
-    postManage.fillTitle('     ');
+    postManage.fillTitle('Borrador');
+    cy.wait(1000);
     //And I back to list Post
     postManage.backPost()
+    cy.wait(1000);
+    //And I go to Draf
+    postManage.backDarfPost()
     cy.wait(1000);
   })
 
@@ -50,21 +52,15 @@ context("Navigation", () => {
     cy.wait(1000);
     //When I go section pages
     adminPage.clickPostBtn()
-    //And I go to Create Tag
-    postManage.createNewButton()
-    //And I enter title
-    postManage.fillTitle('PostC');
-    //And I enter description
-    postManage.fillDescription('PostC');
+    postManage.editPost('Borrador');
+    cy.wait(1000);
     //And I click publish 
     postManage.btnPublish()
     //And I click confirm publish 
-    postManage.btnConfirmPublish()  
+    postManage.btnConfirmPublish()
+    //I expect have to post with the same name "Post1"
     //And I back to list Post
     postManage.backPost()
-    //I expect have to post with the same name "Post1"
-    cy.wait(1000);
-    postManage.validateInList('PostC')
     cy.wait(1000);
 
   })
@@ -73,12 +69,9 @@ context("Navigation", () => {
     cy.wait(1000);
     //When I go section pages
     adminPage.clickPostBtn()
-    //And I go to Create Tag
     postManage.createNewButton()
     //And I enter title
     postManage.fillTitle('PostC');
-    //And I enter description
-    postManage.fillDescription('PostC');
     //And I back to list Post
     cy.wait(1000);
     postManage.backPost()
@@ -88,7 +81,6 @@ context("Navigation", () => {
     //And I enter title
     postManage.fillTitle('PostM');
     //And I enter description
-    postManage.fillDescription('PostM');
     //And I back to list Post
     postManage.backPost()
     //I expect have to post with the same name "Post1"

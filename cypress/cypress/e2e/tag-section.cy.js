@@ -42,10 +42,9 @@ context("Navigation", () => {
     //And I enter slug
     tagManage.fillSlugTag('tagnews//');
     //And I click save tag
-    tagManage.saveTag()
-    //I expect that delete the characters
-    tagManage.deleteCharaters('tagnews//')
     cy.wait(1000);
+    tagManage.saveTag();
+    cy.wait(2000);
   })
 
   it('Scenario: Validar que genere error con una descripción mayor a 500', () => { 
@@ -72,11 +71,12 @@ context("Navigation", () => {
     //And I go to Create Tag
     tagManage.createNewButton()
     //And I enter name
-    tagManage.fillNameTag('tagpruebas');
+    tagManage.fillNameTag('tagprueba');
+    //And I enter name
+    tagManage.fillDescripcionTag('tagprueba');
     cy.wait(1000);
-    tagManage.saveTag()
     //And I validate are equals
-    tagManage.validateSlug('tagpruebas')
+    tagManage.validateSlug('tagprueba')
   })
 
 

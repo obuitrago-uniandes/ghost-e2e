@@ -16,7 +16,7 @@ class AdminPage {
     return this;
   }
   clickPostBtn() {
-    cy.get('a[data-test-nav="posts"]').click({ force: true })
+    cy.get(".gh-nav-list-h").parent().contains("Posts").click();
     return this;
   }
 }
