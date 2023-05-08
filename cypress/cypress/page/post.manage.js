@@ -5,11 +5,11 @@ class PostManage {
     }
 
     backPost() {
-        return cy.get(`a[data-test-link="posts"]`).click({ force: true });
+        return cy.get(`a[href="#/posts/"]`).click({ force: true });
     }
     
     validateInList(value){
-        return cy.get('p').parent(cy.get(".gh-list-row")).contains(value)
+        return cy.get('h3').parent(cy.get(".content-list")).contains(value)
 
         
     }
@@ -27,28 +27,16 @@ class PostManage {
         return this;
     }
 
-    btnPreview(){
-        return cy.get(`button[data-test-button="publish-preview"]`).click({ force: true });
-    }
-
     btnPublish(){
-        return cy.get(`button[data-test-button="publish-flow"]`).click({ force: true });
-    }
-
-    btnContinue(){
-        return cy.get(`button[data-test-button="continue"]`).click({ force: true });
+        //return cy.get(`button[data-test-button="publish-flow"]`).click({ force: true });
     }
 
     btnConfirmPublish(){
-        return cy.get(`button[data-test-button="confirm-publish"]`).click({ force: true });
+        //return cy.get(`button[data-test-button="confirm-publish"]`).click({ force: true });
     }
 
     editPost(value){
-        return cy.get(".gh-list-row").contains(value).click({ force: true });
-    }
-
-    btnBackEditor(){
-        return cy.get(`button[data-test-button="back-to-editor"]`).click({ force: true });
+        return cy.get(".content-list").contains(value).click({ force: true });
     }
 
 

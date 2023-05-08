@@ -11,7 +11,7 @@ class AdminPage extends Page {
     return this.driver.$('.gh-nav-body').$('a=Design');
   }
   get tagMenuBtn() {
-    return this.driver.$('[data-test-nav="tags"]');
+    return this.driver.$('[href="#/tags/"]');
   }
   get postMenuBtn() {
     return this.driver.$('[href="#/posts/"]');

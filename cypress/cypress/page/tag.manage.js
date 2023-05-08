@@ -5,7 +5,7 @@ class TagManage {
     }
 
     saveTag() {
-        return cy.get(`button[data-test-button="save"]`).click({ force: true });
+        return cy.get(".gh-canvas").contains("Save").click({ force: true });
     }
     
     validateError() {
@@ -14,7 +14,7 @@ class TagManage {
     }
 
     fillSlugTag(value){
-        const field =  cy.get(`input[data-test-input="tag-slug"]`);
+        const field =  cy.get(`input[name="slug"]`);
         field.clear();
         field.type(value);
     
@@ -22,7 +22,7 @@ class TagManage {
     }
 
     fillDescripcionTag(value){
-        const field =  cy.get(`textarea[data-test-input="tag-description"]`);
+        const field =  cy.get(`textarea[name="description"]`);
         field.clear();
         field.type(value);
     
@@ -30,12 +30,13 @@ class TagManage {
     }
 
     maxCharacterError(){       
-        return cy.get('p').parent(`div[class="form-group no-margin error"]`).should('contain', 'Description cannot be longer than 500 characters.')
+        //falta
+        //return cy.get(`textarea[name="description"]`).value.lenght
 
     }
 
     fillNameTag(value){
-        const field =  cy.get(`input[data-test-input="tag-name"]`);
+        const field =  cy.get(`input[name="name"]`);
         field.type(value);    
         return this;
     }

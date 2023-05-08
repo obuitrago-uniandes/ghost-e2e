@@ -8,27 +8,25 @@ class PostAdminPage extends Page {
     return this.driver.$('[href="#/editor/post/"]');
   }
 
-  get previewBtn() {
-    return this.driver.$('[data-test-button="publish-preview"]');
-  }
   get publishBtn() {
-    return this.driver.$('[data-test-button="publish-flow"]');
+    return this.driver.$(".gh-publishmenu").$("span=Publish");
   }
   get confirmPublishBtn() {
-    return this.driver.$('[data-test-button="confirm-publish"]');
-  }
-  get continueBtn() {
-    return this.driver.$('[data-test-button="continue"]');
+    return this.driver.$(".gh-publishmenu-footer").$("span=Publish");
   }
   get volverBtn() {
-    return this.driver.$('[data-test-link="posts"]');
+    return this.driver.$('[href="#/posts/"]');
+  }
+  
+  get verPublicados(){
+    return this.driver.$('href="#/posts/?type=published"');    
   }
   get editBtn() {
-    return this.driver.$('[title="Go to Editor"]');
+    return this.driver.$('[title="Edit this post"]');
   }
   
   get nameInput() {
-    return this.driver.$('[placeholder="Post title"]');
+    return this.driver.$('[placeholder="Post Title"]');
   }
   
   get descriptionInput() {
@@ -36,7 +34,7 @@ class PostAdminPage extends Page {
   }
 
   get encontrarPost() {
-    return this.driver.$('a=Posts').parentElement().parentElement().parentElement().parentElement().parentElement();
+    return this.driver.$('.content-list');
   }
 
 }
