@@ -1,5 +1,10 @@
 # Pruebas e2e en Ghost 3.41.1
 
+## Equipo 20
+"Mery Alejandra Niño Gomez" <ma.ninog12@uniandes.edu.co>
+"Walter Giovanny Cuadros Rincon" <w.cuadrosr@uniandes.edu.co>
+"Oscar Andre Buitrago Villamil" <o.buitragov@uniandes.edu.co>
+
 ## Funcionalidades bajo prueba
 | Funcionalidad |
 | -- |
