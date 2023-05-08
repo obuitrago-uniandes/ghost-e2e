@@ -15,11 +15,11 @@ class PostAdminPage extends Page {
     return this.driver.$(".gh-publishmenu-footer").$("span=Publish");
   }
   get volverBtn() {
-    return this.driver.$('[href="#/posts/"]');
+    return this.driver.$('[href="#/posts/"]');  
   }
   
   get verPublicados(){
-    return this.driver.$('href="#/posts/?type=published"');    
+    return this.driver.$('[href="#/posts/?type=published"]');    
   }
   get editBtn() {
     return this.driver.$('[title="Edit this post"]');

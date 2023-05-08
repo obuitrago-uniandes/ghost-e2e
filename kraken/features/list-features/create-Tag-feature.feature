@@ -59,7 +59,8 @@ Scenario: Valida que el slug y el nombre sean iguales
 	And I click Tag
   	And I wait for 3 seconds 
 	And I click New Tag
-	When I enter name Tag "pagina1"
+	And I enter name Tag "pagina1"
+	And I click save New Tag
 	Then Are Equals	
   	And I wait for 3 seconds 
 
