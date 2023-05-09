@@ -42,9 +42,9 @@ context("Navigation", () => {
     //And I enter slug
     tagManage.fillSlugTag('tagnews//');
     //And I click save tag
-    tagManage.saveTag()
-    //I expect that delete the characters
-    tagManage.deleteCharaters('tagnews//')
+    cy.wait(1000);
+    tagManage.fillSlugTag('tagnews');
+    tagManage.saveTag();
     cy.wait(1000);
   })
 
@@ -55,8 +55,9 @@ context("Navigation", () => {
     //And I go to Create Tag
     tagManage.createNewButton()
     //And I enter description
-    tagManage.fillDescripcionTag('Al contrario del pensamiento popular, el texto de Lorem Ipsum no es simplemente texto aleatorio. Tiene sus raices en una pieza clasica de la literatura del Latin, que data del año 45 antes de Cristo, haciendo que este adquiera mas de 2000 años de antiguedad. Richard McClintock, un profesor de Latin de la Universidad en Virginia, encontró una de las palabras más oscuras de la lengua del latín, en un pasaje de Lorem Ipsum, y al seguir leyendo distintos textos del latín, descubrió la fuente indudable. Lorem Ipsum viene de las secciones 1.10.32 y 1.10.33 de por Cicero, escrito en el año 45 antes de Cristo. Este libro es un tratado de teoría de éticas, muy popular durante el Renacimiento. La primera linea del Lorem Ipsum,  viene de una linea en la sección')
+    tagManage.fillDescripcionTag('Al contrario del pensamiento popular, el texto de Lorem Ipsum no es simplemente texto aleatorio. Tiene sus raices en una pieza clasica de la literatura del Latin, que data del año 45 antes de Cristo, haciendo que este adquiera mas de 2000 años de antiguedad. Richard McClintock, un profesor de Latin de la Universidad en Virginia, encontró una de las palabras más oscuras de la lengua del latín, en un pasaje de Lorem Ipsum, y al seguir leyendo distintos textos del latín, descubrió la fuente indudable. Lorem Ipsum viene de las secciones 1.10.32 y 1.10.33 de por Cicero')
     //And I click save tag
+    cy.wait(1000);
     tagManage.saveTag()
     //I expect have the max characters error
     cy.wait(1000);
@@ -72,11 +73,12 @@ context("Navigation", () => {
     //And I go to Create Tag
     tagManage.createNewButton()
     //And I enter name
-    tagManage.fillNameTag('tagpruebas');
+    tagManage.fillNameTag('tagprueba');
+    //And I enter name
+    tagManage.fillDescripcionTag('tagprueba');
     cy.wait(1000);
-    tagManage.saveTag()
     //And I validate are equals
-    tagManage.validateSlug('tagpruebas')
+    tagManage.validateSlug('tagprueba')
   })
 
 

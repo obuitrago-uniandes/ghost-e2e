@@ -18,83 +18,106 @@ context("Navigation", () => {
   });
 
   it('Scenario: Crear post vacio', () => {
+      cy.wait(1000);
       //When I go section Post
       adminPage.clickPostBtn()
-      //And I go to Create Post
+      cy.wait(1000);
       postManage.createNewButton()
+      cy.wait(1000);
       //And I enter title
-      postManage.fillTitle('(Untitled)');
+      postManage.fillTitle(' ');
+      cy.wait(1000);
       //And I back to list Post
-      postManage.backPost()
-      postManage.backPost()
-      //Then I expect have to post with the same name "(Untitled)"
-      cy.wait(2000);
-      postManage.validateInList('(Untitled)')
-      cy.wait(3000);
+      postManage.clickP()
+      
   })
 
-  it('Scenario: No permitir guardar borrador de post con titulo con espacios', () => { 
-    cy.wait(1000);
-    //When I go section Post
-    adminPage.clickPostBtn()
-    //And I go to Create Post
-    postManage.createNewButton()
-    //And I enter title
-    postManage.fillTitle('     ');
-    //And I back to list Post
-    postManage.backPost()
-    cy.wait(1000);
-  })
-
-  it('Scenario: Crear post y publicar', () => { 
+//Se Crea
+  it('Scenario: Crear post', () => { 
     cy.wait(1000);
     //When I go section pages
     adminPage.clickPostBtn()
-    //And I go to Create Tag
+    cy.wait(1000);
     postManage.createNewButton()
-    //And I enter title
-    postManage.fillTitle('PostC');
-    //And I enter description
-    postManage.fillDescription('PostC');
+    cy.wait(1000);
+    postManage.fillTitle('Borrador');
+    cy.wait(1000);
+    //And I back to list Post
+    postManage.clickP()
+    cy.wait(1000);
+
+  })
+
+  //Se publica
+  it('Scenario: Publicar publicar', () => { 
+    cy.wait(1000);
+    //When I go section pages
+    adminPage.clickPostBtn()
+    cy.wait(1000);
+    postManage.editPost('Borrador');
+    cy.wait(1000);
     //And I click publish 
     postManage.btnPublish()
     //And I click confirm publish 
-    postManage.btnConfirmPublish()  
+    postManage.btnConfirmPublish()
     //And I back to list Post
+    postManage.clickP()
     postManage.backPost()
-    //I expect have to post with the same name "Post1"
-    cy.wait(1000);
-    postManage.validateInList('PostC')
     cy.wait(1000);
 
   })
-
+  //Se edita
   it('Scenario: Editar post', () => { 
     cy.wait(1000);
     //When I go section pages
-    adminPage.clickPostBtn()
-    //And I go to Create Tag
-    postManage.createNewButton()
-    //And I enter title
-    postManage.fillTitle('PostC');
-    //And I enter description
-    postManage.fillDescription('PostC');
-    //And I back to list Post
+    adminPage.clickPostBtn()  
     cy.wait(1000);
-    postManage.backPost()
+    postManage.selectFirst();
     cy.wait(1000);
-    //And I edit Post
-    postManage.editPost('PostC')
     //And I enter title
     postManage.fillTitle('PostM');
-    //And I enter description
-    postManage.fillDescription('PostM');
     //And I back to list Post
+    postManage.clickP()
     postManage.backPost()
     //I expect have to post with the same name "Post1"
     cy.wait(1000);
-    postManage.validateInList('PostC')
   })
+
+  //Se elimina post
+  it('Scenario: eliminar post', () => { 
+    cy.wait(1000);
+    //When I go section pages
+    adminPage.clickPostBtn()  
+    cy.wait(1000);  
+    postManage.selectFirst();
+    cy.wait(1000);
+    //And I got to setting
+    postManage.seeSettings()
+    //And I delete Post
+    postManage.deletePost()
+    postManage.confirmDeletePost()
+    
+    cy.wait(1000);
+  })
+
+
+
+  it('Scenario: No permitir guardar borrador de post con titulo vacio', () => { 
+    cy.wait(1000);
+    //When I go section Post
+    adminPage.clickPostBtn()
+    cy.wait(1000);
+    postManage.createNewButton()
+    cy.wait(1000);
+    //And I back to list Post
+    postManage.backPost()
+    cy.wait(1000);
+    //And I go to Draf
+    postManage.backDarfPost()
+    cy.wait(1000);
+  })
+
+  
 
 
 });

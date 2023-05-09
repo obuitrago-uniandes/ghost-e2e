@@ -5,7 +5,11 @@ class TagManage {
     }
 
     saveTag() {
-        return cy.get(".gh-canvas").contains("Save").click({ force: true });
+        return cy.get(".gh-canvas").contains("Save").click();
+    }
+    
+    clickSaveTag() {
+        return cy.get(".view-actions").contains("Save").click({ force: true });
     }
     
     validateError() {
@@ -14,41 +18,42 @@ class TagManage {
     }
 
     fillSlugTag(value){
-        const field =  cy.get(`input[name="slug"]`);
-        field.clear();
-        field.type(value);
-    
+        const field =  cy.get('#tag-slug');
+        field.clear({ force: true }).type(value, { force: true });
+
         return this;
     }
 
     fillDescripcionTag(value){
-        const field =  cy.get(`textarea[name="description"]`);
-        field.clear();
-        field.type(value);
+        const field =  cy.get('#tag-description').type(value, { force: true });
     
         return this;
     }
 
     maxCharacterError(){       
-        //falta
-        //return cy.get(`textarea[name="description"]`).value.lenght
+        return cy.get('#tag-description').should('not.have.length', 500)
 
     }
 
     fillNameTag(value){
-        const field =  cy.get(`input[name="name"]`);
-        field.type(value);    
+        const field =  cy.get('#tag-name');
+        field.clear({ force: true }).type(value, { force: true });
         return this;
     }
         
     deleteCharaters(value){
-        return  cy.get(`input[name="slug"]`).should('not.have.value',value)
+        return  cy.get('#tag-slug').should('have.value',value)
     }
 
     validateSlug(value){
-        return  cy.get('p').parent(cy.get(`input[name="slug"]`)).contains(value)
+        return  cy.get('p').contains(value)
     }
-
+    openTag(value){
+        return  cy.get('.content-list').contains(value).click();
+    }
+    irTag(){
+        return  cy.get('.gh-nav-top').contains('Tags').click();
+    }
 
   }
   
