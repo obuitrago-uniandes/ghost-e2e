@@ -17,13 +17,14 @@ Para la ejecución de las pruebas usamos la versión 14.21.3 de nodejs, y se sig
 
 ## Pasos para la ejecución
 1. Actualice el archivo `./kraken/properties.json` con las credenciales de acceso al Ghost local.
-1. Abra una consola o terminal y ubíquese en la carpeta donde se encuentra este readme
-2. Ejecute 
+2. Abra una consola o terminal y ubíquese en la carpeta donde se encuentra este readme
+3. Ejecute 
 ```shell
 npm install
 ```
-3. Asegúrese de copiar y pegar dentro del directorio `./kraken/features` la funcionalidad que desea probar. Puede encontrar el listado completo de funcionalidades en el directorio `./kraken/features/list-features`
-4. Luego de asegurarse que exista un solo archivo con extensión `.feature` en el directorio `./kraken/features` Ejecute:
+4. Copie el contenido de la carpeta `kraken-node-modif` en la carpeta `./node_modules/kraken-node`
+5. Asegúrese de copiar y pegar dentro del directorio `./kraken/features` la funcionalidad que desea probar. Puede encontrar el listado completo de funcionalidades en el directorio `./kraken/features/list-features`
+6. Luego de asegurarse que exista un solo archivo con extensión `.feature` en el directorio `./kraken/features` Ejecute:
 ```shell
 npx kraken-node run
 ```
