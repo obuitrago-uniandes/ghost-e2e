@@ -265,6 +265,9 @@ When("I go to back page list", async function () {
 When("I click on page untitled", async function () {
   return await this.pageSection.pageUntitled.click();
 });
+When("I click on page created", async function () {
+  return await this.pageSection.pageCreated.click();
+});
 When("I enter title edit {kraken-string}", async function (title) {
   return await this.pageSection.titlePage.setValue(title);
 });
@@ -277,6 +280,9 @@ When("I click on plus button", async function () {
 });
 When("I select html option", async function () {
   return await this.pageSection.cardHtml.click();
+});
+When("I enter html text", async function () {
+  return await this.pageSection.textAreaHtml.setValue(this.pageSection.setHtmlText());
 });
 When("I enter html", async function () {
   return await this.pageSection.textAreaHtml.setValue(this.pageSection.setHtml());
@@ -299,6 +305,11 @@ Then('I see that the item page is liked in list page', async function () {
   let elements = await this.pageSection.pageItem
   expect(elements.length).to.equal(1);
 });
-
-
+Then('I see that the item page is liked edit in list page', async function () {
+  let elements = await this.pageSection.pageItemEdit
+  expect(elements.length).to.equal(1);
+});
+When("I click on settings", async function () {
+  return await this.pageSection.settingsButton.click();
+});
 

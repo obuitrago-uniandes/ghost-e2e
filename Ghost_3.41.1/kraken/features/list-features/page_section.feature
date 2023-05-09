@@ -28,12 +28,14 @@ Scenario: Como usuario creo una página con titulo y contenido
   And I click on publish now
   And I wait for 1 seconds
   And I go to back page list
-  And I wait
+  And I wait for 1 seconds
+  And I see that the item page is liked in list page
+  And I wait for 2 seconds
   Then I send a signal to user 2 containing "create_page"
   Then I send a signal to user 3 containing "create_page"
 
 @user2 @web
-Scenario: Como usuario reviso que se visualice la pagina editada en el listado
+Scenario: Como usuario edito una pagina ya creada
   Given I wait for a signal containing "create_page" for 120 seconds
   When I navigate to page "http://localhost:2368/ghost/#/signin"  
   And I enter email "<USER>"
@@ -43,11 +45,26 @@ Scenario: Como usuario reviso que se visualice la pagina editada en el listado
   And I wait for 1 seconds
   And I go to section pages
   And I wait for 1 seconds
-  And I see that the item page is liked in list page
+  And I click on page created
+  And I enter title edit "Titulo actualizado"
+  And I wait for 1 seconds
+  And I click on content
+  And I click on plus button 
+  And I wait for 1 seconds
+  And I select html option
+  And I wait for 1 seconds
+  And I enter html text
+  And I click on update dropdown
+  And I wait for 1 seconds
+  And I click on update
+  And I wait for 1 seconds
+  And I go to back page list
+  And I wait for 1 seconds
+  And I see that the item page is liked edit in list page
   And I wait for 2 seconds
 
 @user3 @web
-Scenario: Como usuario visualizo la pagina en la web
+Scenario: Como usuario visualizo la pagina creada en la web
   Given  I wait for a signal containing "create_page" for 120 seconds
   When I navigate to page "http://localhost:2368/this-title-page"
   And I wait for 1 seconds
@@ -109,7 +126,4 @@ Scenario: Como usuario edito una página y le agrego titulo y contenido
   And I go to back page list
   And I wait for 1 seconds
 
-
-
-  
 
