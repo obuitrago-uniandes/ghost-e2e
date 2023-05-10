@@ -38,6 +38,9 @@ class PostManage {
     backDarfPost(){
         return cy.get(".gh-nav-body").contains("Drafts").click();
     }
+    backPublishPost(){
+        return cy.get('a[title="Published"]').click({ force: true });
+    }
 
     btnConfirmPublish(){
         return cy.get(".gh-publishmenu-footer").contains("Publish").click({ force: true });
@@ -56,6 +59,10 @@ class PostManage {
     }
     confirmDeletePost(){        
         return  cy.get('.modal-footer').contains("Delete").click({ force: true })
+    }
+
+    validarVacioTitulo(){        
+        return  cy.get(`textarea[placeholder="Post Title"]`).contains("(Untitled)")
     }
   }
   
