@@ -1,6 +1,6 @@
 {
   "projectId": "ghost-e2e-cypress",
-  "baseUrl": "http://localhost:2368/",
+  "baseUrl": "http://localhost:3001/",
   "chromeWebSecurity": false,
   "integrationFolder": "./cypress/e2e",
   "pluginsFile": "./cypress/plugins/index.js",

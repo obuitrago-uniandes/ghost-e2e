@@ -7,7 +7,7 @@ const principalPage = require("../page/principal.page");
 
 context("Modificar Información General", () => {
   beforeEach(() => {
-    /// Given I navigate to page "http://localhost:2368/ghost/#/signin"
+    /// Given I navigate to page "http://localhost:3001/ghost/#/signin"
     cy.fixture("ghost.json").as("ghostData");
     cy.visit("/ghost/#/signin");
     /// And I Sign In with email and password

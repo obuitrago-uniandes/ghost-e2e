@@ -2,7 +2,7 @@ Feature: Post
 
 @user1 @web
 Scenario: Crear post vacio
-	Given I navigate to page "http://localhost:2368/ghost"
+	Given I navigate to page "http://localhost:3001/ghost"
 	When I enter email "<USER>"
 	And I enter password "<PASSWORD>"
 	And I Sign In
@@ -20,7 +20,7 @@ Scenario: Crear post vacio
 @user2 @web
 Scenario: No permitir guardar borrador de post con titulo con espacios
 	Given I wait for a signal containing "Scenario Validate 1" for 60 seconds
-  	And I navigate to page "http://localhost:2368/ghost"
+  	And I navigate to page "http://localhost:3001/ghost"
 	When I enter email "<USER>"
 	And I enter password "<PASSWORD>"
 	And I Sign In
@@ -36,7 +36,7 @@ Scenario: No permitir guardar borrador de post con titulo con espacios
 @user3 @web
 Scenario: Crear post y publicar
 	Given I wait for a signal containing "Scenario Validate 2" for 60 seconds
-  	And I navigate to page "http://localhost:2368/ghost"
+  	And I navigate to page "http://localhost:3001/ghost"
 	When I enter email "<USER>"
 	And I enter password "<PASSWORD>"
 	And I Sign In
@@ -56,7 +56,7 @@ Scenario: Crear post y publicar
 
 @user4 @web
 Scenario: Editar post 
-	Given I navigate to page "http://localhost:2368/ghost"
+	Given I navigate to page "http://localhost:3001/ghost"
 	When I enter email "<USER>"
 	And I enter password "<PASSWORD>"
 	And I Sign In

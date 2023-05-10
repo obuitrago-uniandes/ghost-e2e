@@ -3,7 +3,7 @@ Feature: Creación y edición de páginas
 
 @user1 @web
 Scenario: Como usuario creo una página con titulo y contenido
-  Given I navigate to page "http://localhost:2368/ghost/#/signin"
+  Given I navigate to page "http://localhost:3001/ghost/#/signin"
   And I have previously registered with "<USER>" and "<PASSWORD>"
   When I enter email "<USER>"
   And I enter password "<PASSWORD>"
@@ -37,7 +37,7 @@ Scenario: Como usuario creo una página con titulo y contenido
 @user2 @web
 Scenario: Como usuario edito una pagina ya creada
   Given I wait for a signal containing "create_page" for 120 seconds
-  When I navigate to page "http://localhost:2368/ghost/#/signin"  
+  When I navigate to page "http://localhost:3001/ghost/#/signin"  
   And I enter email "<USER>"
   And I enter password "<PASSWORD>"
   And I wait for 1 seconds
@@ -66,7 +66,7 @@ Scenario: Como usuario edito una pagina ya creada
 @user3 @web
 Scenario: Como usuario visualizo la pagina creada en la web
   Given  I wait for a signal containing "create_page" for 120 seconds
-  When I navigate to page "http://localhost:2368/this-title-page"
+  When I navigate to page "http://localhost:3001/this-title-page"
   And I wait for 1 seconds
   When I see that the title is liked
   And I see that the iframe is liked
@@ -76,7 +76,7 @@ Scenario: Como usuario visualizo la pagina creada en la web
 @user4 @web
 Scenario: Como usuario creo una página con titulo y contenido vacios
   Given I wait for 10 seconds
-  And I navigate to page "http://localhost:2368/ghost/#/signin"
+  And I navigate to page "http://localhost:3001/ghost/#/signin"
   And I wait for 1 seconds
   When I enter email "<USER>"
   And I enter password "<PASSWORD>"
@@ -101,7 +101,7 @@ Scenario: Como usuario creo una página con titulo y contenido vacios
 
 @user5 @web
 Scenario: Como usuario edito una página y le agrego titulo y contenido
-  Given I navigate to page "http://localhost:2368/ghost/#/signin"
+  Given I navigate to page "http://localhost:3001/ghost/#/signin"
   When I wait for a signal containing "create_page" for 120 seconds
   And I enter email "<USER>"
   And I enter password "<PASSWORD>"

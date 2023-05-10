@@ -2,7 +2,7 @@ Feature: Modificar Información Diseño
 
 @user1 @web
 Scenario: Agregar una nueva opción al menú de navegación 
-  Given I navigate to page "http://localhost:2368/ghost"
+  Given I navigate to page "http://localhost:3001/ghost"
   And I have previously registered with "<USER>" and "<PASSWORD>"
   When I enter email "<USER>"
   And I enter password "<PASSWORD>"
@@ -12,7 +12,7 @@ Scenario: Agregar una nueva opción al menú de navegación
   And I enter navigation url "https://thesoftwaredesignlab.github.io/"
   And I save design settings
   And I wait for 3 seconds
-  And I navigate to page "http://localhost:2368"
+  And I navigate to page "http://localhost:3001"
   Then I send a signal to user 2 containing "scenario 1 complete"
   And I expect to have a navigation menu item with "The Software Design Lab" value and link to "https://thesoftwaredesignlab.github.io/"
   And I wait for 3 seconds
@@ -20,7 +20,7 @@ Scenario: Agregar una nueva opción al menú de navegación
 @user2 @web
 Scenario: Eliminar la última opción del menú de navegación
   Given I wait for a signal containing "scenario 1 complete" for 60 seconds
-  And I navigate to page "http://localhost:2368/ghost"
+  And I navigate to page "http://localhost:3001/ghost"
   When I enter email "<USER>"
   And I enter password "<PASSWORD>"
   And I Sign In
@@ -28,7 +28,7 @@ Scenario: Eliminar la última opción del menú de navegación
   And I click on delete navigation item "The Software Design Lab"
   And I save design settings
   And I wait for 3 seconds
-  And I navigate to page "http://localhost:2368"
+  And I navigate to page "http://localhost:3001"
   Then I send a signal to user 3 containing "scenario 2 complete"
   And I expect do not have a navigation menu item with "The Software Design Lab"  
   And I wait for 3 seconds
@@ -36,7 +36,7 @@ Scenario: Eliminar la última opción del menú de navegación
 @user3 @web
 Scenario: Intentar editar un item de navegación cambiando el label a vacío
   Given I wait for a signal containing "scenario 2 complete" for 60 seconds
-  And I navigate to page "http://localhost:2368/ghost"
+  And I navigate to page "http://localhost:3001/ghost"
   When I enter email "<USER>"
   And I enter password "<PASSWORD>"
   And I Sign In
@@ -51,7 +51,7 @@ Scenario: Intentar editar un item de navegación cambiando el label a vacío
 @user4 @web
 Scenario: Intentar agregar un item de navegación con el label vacío
   Given I wait for a signal containing "scenario 3 complete" for 90 seconds
-  And I navigate to page "http://localhost:2368/ghost"
+  And I navigate to page "http://localhost:3001/ghost"
   When I enter email "<USER>"
   And I enter password "<PASSWORD>"
   And I Sign In

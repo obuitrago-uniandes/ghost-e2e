@@ -8,7 +8,7 @@ const screenShots = require("../page/screenshots")
 
 context("Modificar Información de diseño", () => {
   beforeEach(() => {
-    /// Given I navigate to page "http://localhost:2368/ghost/#/signin"
+    /// Given I navigate to page "http://localhost:3002/ghost/#/signin"
     screenShots.incrementIndexScenario();
     screenShots.resetIndexStep();
     cy.fixture("ghost.json").as("ghostData");

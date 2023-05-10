@@ -2,7 +2,7 @@ Feature: Crear Tags
 
 @user1 @web
 Scenario: Si el nombre está vacio no permite guardar y muestra alerta
-	Given I navigate to page "http://localhost:2368/ghost"
+	Given I navigate to page "http://localhost:3001/ghost"
  	When I enter email "<USER>"
   	And I enter password "<PASSWORD>"
   	And I Sign In
@@ -17,7 +17,7 @@ Scenario: Si el nombre está vacio no permite guardar y muestra alerta
 @user2 @web
 Scenario: No permitir crear un tag con caracter "/" en el slug
 	Given I wait for a signal containing "Scenario Validate 1" for 60 seconds
-  	And I navigate to page "http://localhost:2368/ghost"
+  	And I navigate to page "http://localhost:3001/ghost"
 	When I enter email "<USER>"
 	And I enter password "<PASSWORD>"
 	And I Sign In
@@ -33,7 +33,7 @@ Scenario: No permitir crear un tag con caracter "/" en el slug
 @user3 @web
 Scenario: Si la descripción tiene mas de 500 caracteres larga
 	Given I wait for a signal containing "Scenario Validate 2" for 60 seconds
-  	And I navigate to page "http://localhost:2368/ghost"
+  	And I navigate to page "http://localhost:3001/ghost"
 	When I enter email "<USER>"
 	And I enter password "<PASSWORD>"
 	And I Sign In
@@ -51,7 +51,7 @@ Scenario: Si la descripción tiene mas de 500 caracteres larga
 
 @user4 @web
 Scenario: Valida que el slug y el nombre sean iguales
-	Given I navigate to page "http://localhost:2368/ghost"
+	Given I navigate to page "http://localhost:3001/ghost"
 	When I enter email "<USER>"
 	And I enter password "<PASSWORD>"
 	And I Sign In

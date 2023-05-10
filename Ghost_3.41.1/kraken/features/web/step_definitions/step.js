@@ -14,7 +14,7 @@ Given(
       await this.registrationPage.passwordInput.setValue(password);
       await this.registrationPage.step2Btn.click();
       await this.registrationPage.step3Btn.click();
-      await this.driver.url("http://localhost:2368/ghost/#/signout");
+      await this.driver.url("http://localhost:3001/ghost/#/signout");
     }
   }
 );
