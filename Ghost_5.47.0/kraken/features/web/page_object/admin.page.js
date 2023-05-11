@@ -13,9 +13,6 @@ class AdminPage extends Page {
   get tagMenuBtn() {
     return this.driver.$('[href="#/tags/"]');
   }
-  get postMenuBtn() {
-    return this.driver.$('[href="#/posts/"]');
-  }
   get pageButton(){
     return this.driver.$('.gh-nav-body').$('a=Pages');
   }
