@@ -10,15 +10,14 @@ context("Modificar Información de diseño", () => {
   beforeEach(() => {
     /// Given I navigate to page "http://localhost:3001/ghost/#/signin"
     screenShots.incrementIndexScenario();
-    screenShots.resetIndexStep();
     cy.fixture("ghost.json").as("ghostData");
     cy.visit("/ghost/#/signin");
+    screenShots.screenShot();
     /// And I Sign In with email and password
     cy.get("@ghostData").then((ghostData) => {
-      loginPage
-        .fillEmail(ghostData.email)
-        .fillPassword(ghostData.password)
-        .submit();
+      loginPage.fillEmail(ghostData.email).fillPassword(ghostData.password);
+      screenShots.screenShot();
+      loginPage.submit();
     });
     screenShots.screenShot();
     cy.wait(1000);
@@ -44,7 +43,6 @@ context("Modificar Información de diseño", () => {
     screenShots.screenShot();
     /// Then I expect to get site title equals to title entered
     principalPage.getMenuItem(label).should("have.attr", "href", url);
-    screenShots.screenShot();
   });
 
   it("Eliminar la última opción del menú de navegación (recién creada)", () => {
@@ -63,7 +61,6 @@ context("Modificar Información de diseño", () => {
     screenShots.screenShot();
     /// expect do not have a navigation menu item with "The Software Design Lab"
     principalPage.getMenuItem(label).should("not.exist");
-    screenShots.screenShot();
   });
 
   it("Intentar editar un item de navegación cambiando el label a vacío", () => {
@@ -81,7 +78,6 @@ context("Modificar Información de diseño", () => {
       "include.text",
       "You must specify a label"
     );
-    screenShots.screenShot();
   });
 
   it("Intentar agregar un item de navegación con el label vacío", () => {
@@ -96,6 +92,5 @@ context("Modificar Información de diseño", () => {
       "include.text",
       "You must specify a label"
     );
-    screenShots.screenShot();
   });
 });

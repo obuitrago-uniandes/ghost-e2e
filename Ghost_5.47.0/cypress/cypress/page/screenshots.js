@@ -2,21 +2,17 @@ class ScreenShots {
   indexScenario = 0;
   indexStep = 1;
 
-  incrementIndexScenario(){
+  incrementIndexScenario() {
     this.indexScenario += 1;
-  }
-  incrementIndexStep(){
-    this.indexStep += 1;
-  }
-  resetIndexScenario(){
-    this.incrementIndexScenario = 1;
-  }
-  resetIndexStep(){
     this.indexStep = 1;
   }
-  screenShot(){
-    const filename =  `scenario_${this.indexScenario}/step_${this.indexStep}` 
-    cy.screenshot(filename)
+  incrementIndexStep() {
+    this.indexStep += 1;
+  }
+  screenShot() {
+    const filename = `scenario_${this.indexScenario}/step_${this.indexStep}`;
+    cy.wait(500);
+    cy.screenshot(filename, { overwrite: true });
     this.indexStep += 1;
   }
 }

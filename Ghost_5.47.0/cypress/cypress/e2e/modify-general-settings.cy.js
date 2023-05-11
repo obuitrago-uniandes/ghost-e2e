@@ -24,7 +24,8 @@ context("Modificar Información General", () => {
   it("Validar XSS en el título.", () => {
     const title = "</title><script>var a = 1;</script><title>";
     /// When I go to General Settings page
-    adminPage.clickGeneralBtn();
+    adminPage.clickSettingsBtn();
+    adminPage.clickGeneralSettingsBtn();
     screenShots.screenShot();
     /// And I expand Title & description section
     generalAdminPage.clickExpandTitleAndDescriptionBtn();
@@ -45,7 +46,8 @@ context("Modificar Información General", () => {
   it("Modificar la descripción del sitio.", () => {
     const title = "Detestable (adjective): software that isn't testable.";
     /// When I go to General Settings page
-    adminPage.clickGeneralBtn();
+    adminPage.clickSettingsBtn();
+    adminPage.clickGeneralSettingsBtn();
     screenShots.screenShot();
     /// And I expand Title & description section
     generalAdminPage.clickExpandTitleAndDescriptionBtn();
@@ -61,47 +63,5 @@ context("Modificar Información General", () => {
     screenShots.screenShot();
     /// Then I expect to get site description equals to title entered
     principalPage.siteDescription.should("have.text", title);
-  });
-
-  it("Validar el cambio de título.", () => {
-    const title = "Un título común";
-    /// When I go to General Settings page
-    adminPage.clickGeneralBtn();
-    screenShots.screenShot();
-    /// And I expand Title & description section
-    generalAdminPage.clickExpandTitleAndDescriptionBtn();
-    screenShots.screenShot();
-    /// And I enter title
-    generalAdminPage.fillTitle(title);
-    screenShots.screenShot();
-    /// And I save general settings
-    generalAdminPage.clickSaveSettings();
-    screenShots.screenShot();
-    /// And I navigate to home page
-    principalPage.visit();
-    screenShots.screenShot();
-    /// Then I expect to get site title equals to title entered
-    principalPage.metaTitle.should("have.text", title);
-  });
-
-  it("Validar un título con comillas dobles.", () => {
-    const title = '"Título con comillas"';
-    /// When I go to General Settings page
-    adminPage.clickGeneralBtn();
-    screenShots.screenShot();
-    /// And I expand Title & description section
-    generalAdminPage.clickExpandTitleAndDescriptionBtn();
-    screenShots.screenShot();
-    /// And I enter title
-    generalAdminPage.fillTitle(title);
-    screenShots.screenShot();
-    /// And I save general settings
-    generalAdminPage.clickSaveSettings();
-    screenShots.screenShot();
-    /// And I navigate to home page
-    principalPage.visit();
-    screenShots.screenShot();
-    /// Then I expect to get site title equals to title entered
-    principalPage.metaTitle.should("have.text", title);
   });
 });

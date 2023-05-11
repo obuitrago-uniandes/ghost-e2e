@@ -20,13 +20,16 @@ const read_after_dir = process.argv[3];
 async function processFile(before_dir, after_dir) {
   let response = {};
   const beforeFiles = glob.sync("**/screenshots/**/*.png", { cwd: before_dir });
-
+  // for (let i = 0; i < beforeFiles.length; i++) {
+  //   console.log(beforeFiles[i]);
+  // }
+  // return;
   for (let i = 0; i < beforeFiles.length; i++) {
     const file = beforeFiles[i];
-    const destTemp = path.join(
-      `./reports/${datetime}`,
-      file.replace("/screenshots", "")
-    );
+    const image = file.startsWith("cypress")
+      ? file.replace("cypress/cypress/screenshots/", "").replace(".cy.js", "")
+      : file.replace("screenshots/", "").replace("kraken/reports/", "");
+    const destTemp = path.join(`./reports/${datetime}`, image);
     if (!fs.existsSync(path.dirname(destTemp))) {
       fs.mkdirSync(path.dirname(destTemp), { recursive: true });
     }
@@ -57,9 +60,8 @@ async function processFile(before_dir, after_dir) {
       ),
       data.getBuffer()
     );
-    const feature = file.split("/")[0];
-    const scenario = file.split("/")[2];
-    const image = file.replace("screenshots/", "");
+    const feature = `${file.split("/")[0]}-${image.split("/")[0]}`;
+    const scenario = image.split("/")[1];
     if (!response[feature]) {
       response[feature] = {};
     }
