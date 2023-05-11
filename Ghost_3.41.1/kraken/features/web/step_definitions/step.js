@@ -104,6 +104,7 @@ When("I save design settings", async function () {
       timeoutMsg: "expected text to change",
     }
   );
+  await this.driver.pause(3000);
   return "ok";
 });
 
@@ -142,96 +143,92 @@ Then(
   }
 );
 
-
 /* CREATE TAG FEATURE */
 
-When('I click Tag', async function() {
+When("I click Tag", async function () {
   return await this.adminPage.tagMenuBtn.click();
 });
 
-When('I click New Tag', async function() {
+When("I click New Tag", async function () {
   return await this.tagAdminPage.newTag.click();
 });
 
-Then('I click save New Tag', async function() {
+Then("I click save New Tag", async function () {
   return await this.tagAdminPage.saveBtn.click();
 });
 
-Then('I validate error', async function() {
+Then("I validate error", async function () {
   this.tagAdminPage.validateError.isExisting();
 });
 
-When('I enter slug {string}', async function (slug) {
+When("I enter slug {string}", async function (slug) {
   return await this.tagAdminPage.slugInput.setValue(slug);
 });
 
-When('I enter description Tag {string}', async function (description) {
+When("I enter description Tag {string}", async function (description) {
   return await this.tagAdminPage.descriptionInput.setValue(description);
 });
 
-When('I enter name Tag {string}', async function (name) {
+When("I enter name Tag {string}", async function (name) {
   return await this.tagAdminPage.nameInput.setValue(name);
 });
 
-Then('Are Equals', async function() {
-  let elementN = await this.driver.$('#tag-name').getValue();
-  let elementS = await this.driver.$('#tag-slug').getValue();
+Then("Are Equals", async function () {
+  let elementN = await this.driver.$("#tag-name").getValue();
+  let elementS = await this.driver.$("#tag-slug").getValue();
   expect(elementN).to.equal(elementS);
 });
 
-Then('I expect that delete the characters', async function() {
-  let elementS = await this.driver.$('#tag-slug').getValue();
-  expect(elementS).to.equal(elementS.replace('/[^\w\s]/gi', ''));
+Then("I expect that delete the characters", async function () {
+  let elementS = await this.driver.$("#tag-slug").getValue();
+  expect(elementS).to.equal(elementS.replace("/[^ws]/gi", ""));
 });
 
-Then('I expect have the max characters error', async function() {
-  let elementN = await this.driver.$('#tag-description').getValue();
+Then("I expect have the max characters error", async function () {
+  let elementN = await this.driver.$("#tag-description").getValue();
   expect(elementN.length).to.not.equal(500);
 });
 
-
-
-
 /* CREATE POST FEATURE */
 
-
-When('I click Post', async function() {
+When("I click Post", async function () {
   return await this.adminPage.postMenuBtn.click();
 });
-When('I click New Post', async function() {
+When("I click New Post", async function () {
   return await this.postAdminPage.newPost.click();
 });
-When('I enter titulo Post {string}', async function (titulo) {
+When("I enter titulo Post {string}", async function (titulo) {
   return await this.postAdminPage.nameInput.setValue(titulo);
 });
 
-When('I enter description Post {string}', async function (description) {
-  return await this.postAdminPage.descriptionInput.setValue(description);    
+When("I enter description Post {string}", async function (description) {
+  return await this.postAdminPage.descriptionInput.setValue(description);
 });
 
-Then('I click publish', async function() {
-  return await this.postAdminPage.publishBtn.click();    
+Then("I click publish", async function () {
+  return await this.postAdminPage.publishBtn.click();
 });
 
-Then('I click confirm publish', async function() {
+Then("I click confirm publish", async function () {
   return await this.postAdminPage.confirmPublishBtn.click();
-}); 
+});
 
-Then('I back to list Post', async function() {
+Then("I back to list Post", async function () {
   return await this.postAdminPage.volverBtn.click();
-}); 
-Then('I expect have to post with the same name {string}', async function(value) {
-  this.postAdminPage.encontrarPost.$(`h3=${value}`).isExisting();
-}); 
+});
+Then(
+  "I expect have to post with the same name {string}",
+  async function (value) {
+    this.postAdminPage.encontrarPost.$(`h3=${value}`).isExisting();
+  }
+);
 
-Then('I edit Post', async function() {
+Then("I edit Post", async function () {
   return await this.postAdminPage.editBtn.click();
-}); 
-Then('I back to publishPost', async function() {
+});
+Then("I back to publishPost", async function () {
   return await this.postAdminPage.verPublicados.click();
-}); 
-
-
+});
 
 /* CREACIÓN EDICIÓN PAGINAS */
 
@@ -282,10 +279,14 @@ When("I select html option", async function () {
   return await this.pageSection.cardHtml.click();
 });
 When("I enter html text", async function () {
-  return await this.pageSection.textAreaHtml.setValue(this.pageSection.setHtmlText());
+  return await this.pageSection.textAreaHtml.setValue(
+    this.pageSection.setHtmlText()
+  );
 });
 When("I enter html", async function () {
-  return await this.pageSection.textAreaHtml.setValue(this.pageSection.setHtml());
+  return await this.pageSection.textAreaHtml.setValue(
+    this.pageSection.setHtml()
+  );
 });
 When("I click on update dropdown", async function () {
   return await this.pageSection.updateDropDown.click();
@@ -293,23 +294,22 @@ When("I click on update dropdown", async function () {
 When("I click on update", async function () {
   return await this.pageSection.updateButton.click();
 });
-Then('I see that the title is liked', async function () {
-  let elements = await this.pageSection.titlePageWeb
+Then("I see that the title is liked", async function () {
+  let elements = await this.pageSection.titlePageWeb;
   expect(elements.length).to.equal(1);
 });
-Then('I see that the iframe is liked', async function () {
-  let elements = await this.pageSection.iframeWeb
+Then("I see that the iframe is liked", async function () {
+  let elements = await this.pageSection.iframeWeb;
   expect(elements.length).to.equal(1);
 });
-Then('I see that the item page is liked in list page', async function () {
-  let elements = await this.pageSection.pageItem
+Then("I see that the item page is liked in list page", async function () {
+  let elements = await this.pageSection.pageItem;
   expect(elements.length).to.equal(1);
 });
-Then('I see that the item page is liked edit in list page', async function () {
-  let elements = await this.pageSection.pageItemEdit
+Then("I see that the item page is liked edit in list page", async function () {
+  let elements = await this.pageSection.pageItemEdit;
   expect(elements.length).to.equal(1);
 });
 When("I click on settings", async function () {
   return await this.pageSection.settingsButton.click();
 });
-

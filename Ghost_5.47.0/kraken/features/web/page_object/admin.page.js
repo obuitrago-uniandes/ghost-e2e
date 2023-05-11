@@ -4,11 +4,14 @@ class AdminPage extends Page {
   constructor(driver) {
     super(driver);
   }
-  get generalMenuBtn() {
-    return this.driver.$('.gh-nav-body').$('a=General');
+  get settingsMenuBtn() {
+    return this.driver.$('.gh-nav-body').$('[data-test-nav="settings"]');
   }
-  get designMenuBtn() {
-    return this.driver.$('.gh-nav-body').$('a=Design');
+  get generalMenuBtn() {
+    return this.driver.$('.gh-main').$('[data-test-nav="general"]');
+  }
+  get navigationMenuBtn() {
+    return this.driver.$('.gh-main').$('[data-test-nav="navigation"]');
   }
   get tagMenuBtn() {
     return this.driver.$('[href="#/tags/"]');
