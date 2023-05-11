@@ -6,6 +6,8 @@ const PrincipalPage = require("../page_object/principal.page");
 const PageSection = require("../page_object/page.section");
 const NavigationAdminPage = require("../page_object/navigation.admin.page");
 const RegistrationPage = require("../page_object/registration.page");
+const TagAdminPage = require("../page_object/tag.admin.page");
+
 
 Before(async function () {
   this.deviceClient = new WebClient("chrome", {}, this.userId);
@@ -18,6 +20,7 @@ Before(async function () {
     navigationAdmin: new NavigationAdminPage(this.driver),
     principal: new PrincipalPage(this.driver),
     registration: new RegistrationPage(this.driver),
+    tagAdmin: new TagAdminPage(this.driver),
   };
 
   this.loginPage = this.pages[`${this.userId}`].login;
@@ -26,6 +29,7 @@ Before(async function () {
   this.navigationAdminPage = this.pages[`${this.userId}`].navigationAdmin;
   this.principalPage = this.pages[`${this.userId}`].principal;
   this.registrationPage = this.pages[`${this.userId}`].registration;
+  this.tagAdminPage = this.pages[`${this.userId}`].tagAdmin;
 });
 
 After(async function () {
@@ -36,4 +40,5 @@ After(async function () {
   this.principalPage = null;
   this.navigationAdminPage = null;
   this.registrationPage = null;
+  this.tagAdminPage = null;
 });

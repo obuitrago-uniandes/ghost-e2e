@@ -3,7 +3,6 @@ Feature: Crear Tags
 @user1 @web
 Scenario: Si la descripción tiene mas de 500 caracteres larga
 	Given I navigate to page "http://localhost:3002/ghost"
-    And I have previously registered with "<USER>" and "<PASSWORD>"
 	When I enter email "<USER>"
 	And I enter password "<PASSWORD>"
 	And I Sign In
@@ -20,7 +19,6 @@ Scenario: Si la descripción tiene mas de 500 caracteres larga
 @user2 @web
 Scenario: Valida que el slug y el nombre sean iguales
     Given I navigate to page "http://localhost:3002/ghost"
-    And I have previously registered with "<USER>" and "<PASSWORD>"
 	When I enter email "<USER>"
 	And I enter password "<PASSWORD>"
 	And I Sign In
