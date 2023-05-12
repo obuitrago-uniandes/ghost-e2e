@@ -244,6 +244,10 @@ When("I click on title", async function () {
   return await this.pageSection.titlePage.click();
 });
 
+When("I enter content", async function () {
+  return await this.pageSection.contentPage.setValue(this.pageSection.setText());
+});
+
 When("I click on content", async function () {
   return await this.pageSection.contentPage.click();
 });
@@ -279,14 +283,10 @@ When("I select html option", async function () {
   return await this.pageSection.cardHtml.click();
 });
 When("I enter html text", async function () {
-  return await this.pageSection.textAreaHtml.setValue(
-    this.pageSection.setHtmlText()
-  );
+  return await this.pageSection.textAreaHtml.setValue(this.pageSection.setHtmlText());
 });
 When("I enter html", async function () {
-  return await this.pageSection.textAreaHtml.setValue(
-    this.pageSection.setHtml()
-  );
+  return await this.pageSection.textAreaHtml.setValue(this.pageSection.setHtml());
 });
 When("I click on update dropdown", async function () {
   return await this.pageSection.updateDropDown.click();
@@ -294,20 +294,20 @@ When("I click on update dropdown", async function () {
 When("I click on update", async function () {
   return await this.pageSection.updateButton.click();
 });
-Then("I see that the title is liked", async function () {
-  let elements = await this.pageSection.titlePageWeb;
+Then('I see that the title is liked', async function () {
+  let elements = await this.pageSection.titlePageWeb
   expect(elements.length).to.equal(1);
 });
-Then("I see that the iframe is liked", async function () {
-  let elements = await this.pageSection.iframeWeb;
+Then('I see that the iframe is liked', async function () {
+  let elements = await this.pageSection.iframeWeb
   expect(elements.length).to.equal(1);
 });
-Then("I see that the item page is liked in list page", async function () {
-  let elements = await this.pageSection.pageItem;
+Then('I see that the item page is liked in list page', async function () {
+  let elements = await this.pageSection.pageItem
   expect(elements.length).to.equal(1);
 });
-Then("I see that the item page is liked edit in list page", async function () {
-  let elements = await this.pageSection.pageItemEdit;
+Then('I see that the item page is liked edit in list page', async function () {
+  let elements = await this.pageSection.pageItemEdit
   expect(elements.length).to.equal(1);
 });
 When("I click on settings", async function () {

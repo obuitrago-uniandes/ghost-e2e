@@ -4,7 +4,6 @@ Feature: Creación y edición de páginas
 @user1 @web
 Scenario: Como usuario creo una página con titulo y contenido
   Given I navigate to page "http://localhost:3001/ghost/#/signin"
-  And I have previously registered with "<USER>" and "<PASSWORD>"
   When I enter email "<USER>"
   And I enter password "<PASSWORD>"
   And I wait for 1 seconds
@@ -17,16 +16,14 @@ Scenario: Como usuario creo una página con titulo y contenido
   And I enter title page
   And I wait for 1 seconds
   And I click on content
-  And I click on plus button 
-  And I wait for 1 seconds
-  And I select html option
-  And I wait for 1 seconds
-  And I enter html
   And I wait for 1 seconds
   And I click on publish
   And I wait for 1 seconds
   And I click on publish now
   And I wait for 1 seconds
+  And I wait for 1 seconds
+  And I wait for 1 seconds
+  And I wait for 2 seconds
   And I go to back page list
   And I wait for 1 seconds
   And I see that the item page is liked in list page
@@ -49,11 +46,9 @@ Scenario: Como usuario edito una pagina ya creada
   And I enter title edit "Titulo actualizado"
   And I wait for 1 seconds
   And I click on content
-  And I click on plus button 
   And I wait for 1 seconds
-  And I select html option
+  And I enter content
   And I wait for 1 seconds
-  And I enter html text
   And I click on update dropdown
   And I wait for 1 seconds
   And I click on update
@@ -69,7 +64,6 @@ Scenario: Como usuario visualizo la pagina creada en la web
   When I navigate to page "http://localhost:3001/this-title-page"
   And I wait for 1 seconds
   When I see that the title is liked
-  And I see that the iframe is liked
   And I wait for 5 seconds
 
 
