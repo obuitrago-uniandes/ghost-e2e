@@ -11,7 +11,6 @@ class ScreenShots {
   }
   screenShot() {
     const filename = `scenario_${this.indexScenario}/step_${this.indexStep}`;
-    cy.wait(500);
     cy.screenshot(filename, { overwrite: true });
     this.indexStep += 1;
   }

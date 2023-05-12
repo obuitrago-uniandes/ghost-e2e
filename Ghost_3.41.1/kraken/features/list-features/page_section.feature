@@ -2,7 +2,7 @@ Feature: Creación y edición de páginas
 
 
 @user1 @web
-Scenario: Como usuario creo una página con titulo y contenido
+Scenario: Como usuario creo una página con titulo 
   Given I navigate to page "http://localhost:3001/ghost/#/signin"
   When I enter email "<USER>"
   And I enter password "<PASSWORD>"

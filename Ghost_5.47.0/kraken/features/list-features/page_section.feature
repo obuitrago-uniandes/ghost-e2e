@@ -32,7 +32,7 @@ Scenario: Como usuario creo una página con titulo
  
 
 @user2 @web
-Scenario: Como usuario creo una página con titulo
+Scenario: Como usuario edito una pagina ya creada
   Given I wait for a signal containing "create_page" for 120 seconds
   And I navigate to page "http://localhost:3002/ghost/#/signin"
   When I enter email "<USER>"
