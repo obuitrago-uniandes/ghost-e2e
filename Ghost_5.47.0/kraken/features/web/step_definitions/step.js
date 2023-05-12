@@ -127,3 +127,63 @@ Then('I expect have the max characters error', async function() {
   expect(elementN.length).to.not.equal(500);
 });
 
+
+/* CREACIÓN EDICIÓN PAGINAS */
+
+When("I go to section pages", async function () {
+  return await this.adminPage.pageButton.click();
+});
+
+When("I go to Create Page", async function () {
+  return await this.pageSection.createNewPage();
+});
+
+When("I click on title", async function () {
+  return await this.pageSection.titlePage.click();
+});
+
+When("I enter content", async function () {
+  return await this.pageSection.contentPage.setValue(this.pageSection.setText());
+});
+When("I click on content", async function () {
+  return await this.pageSection.contentPage.click();
+});
+
+When("I click on publish", async function () {
+  return await this.pageSection.publishButton.click();
+});
+
+When("I click on continue now", async function () {
+  return await this.pageSection.continueButton.click();
+});
+When("I click on right now", async function () {
+  return await this.pageSection.rightNowButton.click();
+});
+When("I click on back editor", async function () {
+  return await this.pageSection.backEditorButton.click();
+});
+When("I go to back page list", async function () {
+  return await this.pageSection.pagesBackButton.click();
+});
+
+When("I click on page created", async function () {
+  return await this.pageSection.pageCreated.click();
+});
+When("I enter title edit {kraken-string}", async function (title) {
+  return await this.pageSection.titlePage.setValue(title);
+});
+When("I enter title page", async function () {
+  return await this.pageSection.titlePage.setValue(this.pageSection.setTitle());
+});
+When("I click on update", async function () {
+  return await this.pageSection.updateButton.click();
+});
+Then('I see that the item page is liked in list page', async function () {
+  let elements = await this.pageSection.pageItem
+  expect(elements.length).to.equal(1);
+});
+Then('I see that the item page is liked edit in list page', async function () {
+  let elements = await this.pageSection.pageItemEdit
+  expect(elements.length).to.equal(1);
+});
+

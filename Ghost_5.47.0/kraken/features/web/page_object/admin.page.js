@@ -17,7 +17,7 @@ class AdminPage extends Page {
     return this.driver.$('[href="#/tags/"]');
   }
   get pageButton(){
-    return this.driver.$('.gh-nav-body').$('a=Pages');
+    return this.driver.$('a[data-test-nav="pages"]');
   }
 }
 
