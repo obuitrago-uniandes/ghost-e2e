@@ -46,14 +46,16 @@
 
 ## Pasos para ejecutar Kraken
 
-Las instrucciones para ejecutar kraken para versión 3.41.1 se encuentran en [el siguiente enlace](./tree/main/Ghost_3.41.1/kraken/README.md)
-Las instrucciones para ejecutar kraken para versión 5.47.0 se encuentran en [el siguiente enlace](./tree/main/Ghost_5.47.0/kraken/README.md)
+Las instrucciones para ejecutar kraken para versión 3.41.1 se encuentran en [el siguiente enlace](./tree/main/Ghost_3.41.1/kraken)
+
+Las instrucciones para ejecutar kraken para versión 5.47.0 se encuentran en [el siguiente enlace](./tree/main/Ghost_5.47.0/kraken)
 
 ## Pasos para ejecutar Cypress
 
-Las instrucciones para ejecutar cypress para versión 3.41.1 se encuentran en [el siguiente enlace](./tree/main/Ghost_3.41.1/cypress/README.md)
-Las instrucciones para ejecutar cypress para versión 5.47.0 se encuentran en [el siguiente enlace](./tree/main/Ghost_5.47.0/cypress/README.md)
+Las instrucciones para ejecutar cypress para versión 3.41.1 se encuentran en [el siguiente enlace](./tree/main/Ghost_3.41.1/cypress)
+
+Las instrucciones para ejecutar cypress para versión 5.47.0 se encuentran en [el siguiente enlace](./tree/main/Ghost_5.47.0/cypress)
 
 ## Pasos para ejecutar el comparador de imágenes
 
-Los pasos para ejecutar el comparador de imágenes se encuentan en [el siguiente enlace](./tree/main/image-comparer/README.md)
+Los pasos para ejecutar el comparador de imágenes se encuentan en [el siguiente enlace](./tree/main/image-comparer)
