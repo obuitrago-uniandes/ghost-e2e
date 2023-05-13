@@ -59,3 +59,7 @@ Las instrucciones para ejecutar cypress para versión 5.47.0 se encuentran en [e
 ## Pasos para ejecutar el comparador de imágenes
 
 Los pasos para ejecutar el comparador de imágenes se encuentan en [el siguiente enlace](https://github.com/obuitrago-uniandes/ghost-e2e/tree/main/image-comparer)
+
+## [Reporte obtenido](https://obuitrago-uniandes.github.io/ghost-e2e/Reporte/report.html) 
+
+
