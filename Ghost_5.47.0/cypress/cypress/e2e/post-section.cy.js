@@ -35,7 +35,6 @@ context("Navigation", () => {
     cy.wait(1000);
     //And I enter title
     postManage.fillTitle('Borrador');
-    screenShots.screenShot();
     cy.go(-1)
     cy.wait(1000);
   })

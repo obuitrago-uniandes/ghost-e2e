@@ -83,6 +83,7 @@ async function processFile(before_dir, after_dir) {
           `-result${path.extname(image)}`
         ),
       },
+      rawMisMatchPercentage: data.rawMisMatchPercentage,
       data: JSON.stringify(
         {
           isSameDimensions: data.isSameDimensions,

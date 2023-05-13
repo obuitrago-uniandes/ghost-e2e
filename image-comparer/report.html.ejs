@@ -50,6 +50,9 @@
       hr {
         margin: 1rem 0;
       }
+      div.row.fail {
+        border: 2px solid red;
+      }
     </style>
   </head>
   <body>
@@ -64,13 +67,13 @@
               type="button"
               data-bs-toggle="collapse"
               data-bs-target="#<%= feature %>"
-              aria-expanded="false"
+              aria-expanded="true"
               aria-controls="<%= feature %>"
             >
               <%= feature %>
             </button>
           </h2>
-          <div id="<%= feature %>" class="accordion-collapse collapse">
+          <div id="<%= feature %>" class="accordion-collapse collapse show">
             <div class="accordion-body">
               <div class="accordion" id="acc-<%= feature %>">
                 <% for (const scenario in results[feature]) { %>
@@ -80,28 +83,33 @@
                       class="accordion-button collapsed"
                       type="button"
                       data-bs-toggle="collapse"
-                      data-bs-target="#<%= scenario %>"
-                      aria-expanded="false"
-                      aria-controls="<%= scenario %>"
+                      data-bs-target="#<%= feature+scenario %>"
+                      aria-expanded="true"
+                      aria-controls="<%= feature+scenario %>"
                     >
                       <%= scenario %>
                     </button>
                   </h2>
-                  <div id="<%= scenario %>" class="accordion-collapse collapse">
+                  <div
+                    id="<%= feature+scenario %>"
+                    class="accordion-collapse collapse show"
+                  >
                     <div class="accordion-body">
                       <h3 class="title"><%= feature %> - <%= scenario %></h3>
                       <% let i = 1 %> <% for (const step of
                       results[feature][scenario]) { %>
-                      <div class="row">
+                      <div
+                        class="row <%= step.rawMisMatchPercentage > 15 ? 'fail': '' %>"
+                      >
                         <h4 class="col-12 text-right">Paso <%= i++ %></h4>
                         <div class="col-3">
-                          <h5>Antes</h5>
+                          <h5>Ahora</h5>
                           <a href="<%= step.files.before %>" target="_blank">
                             <img src="<%= step.files.before %>" alt="" />
                           </a>
                         </div>
                         <div class="col-3">
-                          <h5>Ahora</h5>
+                          <h5>Antes</h5>
                           <a href="<%= step.files.after %>" target="_blank">
                             <img src="<%= step.files.after %>" alt="" />
                           </a>

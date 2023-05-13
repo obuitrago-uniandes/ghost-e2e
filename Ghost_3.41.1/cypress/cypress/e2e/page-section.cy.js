@@ -30,8 +30,8 @@ context("Navigation", () => {
     pageManage.titlePage();
     screenShots.screenShot();
     pageManage.contentPage();
-    screenShots.screenShot();
     cy.go(-1);
+    screenShots.screenShot();
     cy.wait(1000);
   });
 
