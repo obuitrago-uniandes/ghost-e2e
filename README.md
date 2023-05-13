@@ -46,15 +46,15 @@
 
 ## Pasos para ejecutar Kraken
 
-Las instrucciones para ejecutar kraken para versión 3.41.1 se encuentran en [el siguiente enlace](./tree/main/Ghost_3.41.1/kraken)
+Las instrucciones para ejecutar kraken para versión 3.41.1 se encuentran en [el siguiente enlace](https://github.com/obuitrago-uniandes/ghost-e2e/tree/main/Ghost_3.41.1/kraken)
 
-Las instrucciones para ejecutar kraken para versión 5.47.0 se encuentran en [el siguiente enlace](./tree/main/Ghost_5.47.0/kraken)
+Las instrucciones para ejecutar kraken para versión 5.47.0 se encuentran en [el siguiente enlace](https://github.com/obuitrago-uniandes/ghost-e2e/tree/main/Ghost_5.47.0/kraken)
 
 ## Pasos para ejecutar Cypress
 
-Las instrucciones para ejecutar cypress para versión 3.41.1 se encuentran en [el siguiente enlace](./tree/main/Ghost_3.41.1/cypress)
+Las instrucciones para ejecutar cypress para versión 3.41.1 se encuentran en [En el siguiente enlace](https://github.com/obuitrago-uniandes/ghost-e2e/tree/main/Ghost_3.41.1/cypress)
 
-Las instrucciones para ejecutar cypress para versión 5.47.0 se encuentran en [el siguiente enlace](./tree/main/Ghost_5.47.0/cypress)
+Las instrucciones para ejecutar cypress para versión 5.47.0 se encuentran en [el siguiente enlace](https://github.com/obuitrago-uniandes/ghost-e2e/tree/main/Ghost_5.47.0/cypress)
 
 ## Pasos para ejecutar el comparador de imágenes
 
