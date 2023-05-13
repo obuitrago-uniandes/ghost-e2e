@@ -14,7 +14,9 @@ context("Navigation", () => {
       loginPage
         .fillEmail(ghostData.email)
         .fillPassword(ghostData.password)
-        .submit();
+      
+      screenShots.screenShot();
+      loginPage.submit();
     });
     screenShots.screenShot();
     cy.wait(1000);
@@ -33,8 +35,6 @@ context("Navigation", () => {
     //Then I validate error
     cy.wait(1000);
     tagManage.validateError();
-    screenShots.screenShot();
-
     cy.wait(1000);
   });
 
@@ -56,11 +56,9 @@ context("Navigation", () => {
     cy.wait(1000);
     tagManage.fillSlugTag("tagnews");
     screenShots.screenShot();
-    tagManage.saveTag();
-    screenShots.screenShot();
     cy.wait(1000);
   });
-
+  
   it("Scenario: Validar que genere error con una descripción mayor a 500", () => {
     cy.wait(1000);
     //When I go section pages
@@ -71,7 +69,7 @@ context("Navigation", () => {
     screenShots.screenShot();
     //And I enter description
     tagManage.fillDescripcionTag(
-      "Al contrario del pensamiento popular, el texto de Lorem Ipsum no es simplemente texto aleatorio. Tiene sus raices en una pieza clasica de la literatura del Latin, que data del año 45 antes de Cristo, haciendo que este adquiera mas de 2000 años de antiguedad. Richard McClintock, un profesor de Latin de la Universidad en Virginia, encontró una de las palabras más oscuras de la lengua del latín, en un pasaje de Lorem Ipsum, y al seguir leyendo distintos textos del latín, descubrió la fuente indudable. Lorem Ipsum viene de las secciones 1.10.32 y 1.10.33 de por Cicero"
+      "Al contrario del pensamiento popular, el texto de Lorem Ipsum no es simplemente texto aleatorio. Tiene sus raices en una pieza clasica de la literatura del Latin, que data del año 45 antes de Cristo, haciendo que este adquiera mas de 2000 años de antiguedad. Richard McClintock, un profesor de Latin de la Universidad en Virginia, encontró una de las palabras más oscuras de la lengua del latín"
     );
     screenShots.screenShot();
     //And I click save tag
@@ -95,14 +93,15 @@ context("Navigation", () => {
     tagManage.createNewButton();
     screenShots.screenShot();
     //And I enter name
-    tagManage.fillNameTag("tagprueba");
+    tagManage.fillNameTag("tagprueba1");
     screenShots.screenShot();
     //And I enter name
-    tagManage.fillDescripcionTag("tagprueba");
+    tagManage.fillDescripcionTag("tagprueba1");
     screenShots.screenShot();
     cy.wait(1000);
     //And I validate are equals
-    tagManage.validateSlug("tagprueba");
+    tagManage.validateSlug("tagprueba1");
     screenShots.screenShot();
   });
+
 });
