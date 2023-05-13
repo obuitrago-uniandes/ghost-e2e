@@ -62,4 +62,6 @@ Los pasos para ejecutar el comparador de imágenes se encuentan en [el siguiente
 
 ## [Reporte obtenido](https://obuitrago-uniandes.github.io/ghost-e2e/Reporte/report.html) 
 
+## Video
 
+El video lo pueden ver en este [link](https://uniandes-my.sharepoint.com/:v:/g/personal/o_buitragov_uniandes_edu_co/Ebq1tftkQ_hFmi5FpL2i2T8BlxQqR1_vFgiG5pm1tnXmTA?e=LKigXb)
