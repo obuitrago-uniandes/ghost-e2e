@@ -30,3 +30,4 @@ node index.js ..\Ghost_5.47.0 ..\Ghost_3.41.1
 
 Al finalizar el comando debería retornar algo como
 
+![image](https://github.com/obuitrago-uniandes/ghost-e2e/assets/124005780/ae8da6a6-8dff-4253-8f89-ce4e0200a192)
