@@ -132,3 +132,7 @@ dist
 node_modules/
 reports/
 package-lock.json
+
+.kraken
+screenshots
+videos
