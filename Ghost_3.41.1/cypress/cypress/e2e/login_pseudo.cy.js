@@ -5,12 +5,12 @@ const poolData = require("../mock/pseudo/login.mock");
 
 context("Navigation", () => {
 
-  let data ="";
-  (async function () {
-    data = await poolData.getData(Math.floor(Math.random() * 100), "2f32fbc0" );  
-  })()
+  let data;
 
   beforeEach(() => {
+    (async function () {
+      data = await poolData.getData(Math.floor(Math.random() * 100), "2f32fbc0" );  
+    })()
     cy.wait(3000);
   });
 
@@ -25,5 +25,4 @@ context("Navigation", () => {
         .submit();
     });
   });
-
 });
